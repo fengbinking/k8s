@@ -1,0 +1,1 @@
+#KUBE_SCHEDULER_ARGS="--logtostderr=true --log-dir=/home/k8s-t/log/kubernetes --v=2"
