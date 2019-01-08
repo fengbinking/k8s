@@ -1,0 +1,30 @@
+# 启用日志标准错误
+KUBE_LOGTOSTDERR="--logtostderr=true"
+
+# 日志级别
+KUBE_LOG_LEVEL="--v=0"
+
+# Kubelet服务IP地址
+NODE_ADDRESS="--address=192.168.56.101"
+
+# Kubelet服务端口 
+NODE_PORT="--port=10250"
+
+# 自定义节点名称
+NODE_HOSTNAME="--hostname-override=192.168.56.101"
+
+# kubeconfig路径，指定连接API服务器
+KUBELET_KUBECONFIG="--kubeconfig=/etc/kubernetes/kubelet.kubeconfig"
+
+# 允许容器请求特权模式，默认false 
+KUBE_ALLOW_PRIV="--allow-privileged=false"
+
+# KUBELET_POD_INFRA_CONTAINER="--pod-infra-container-image=registry.access.redhat.com/rhel7/pod-infrastructure:latest"
+KUBELET_POD_INFRA_CONTAINER="--pod-infra-container-image=registry.cn-hangzhou.aliyuncs.com/google-containers/pause-amd64:3.0"
+
+# DNS信息 
+KUBELET_DNS_IP="--cluster-dns=10.254.0.2"
+KUBELET_DNS_DOMAIN="--cluster-domain=cluster.local"
+
+# 禁用使用 Swap 
+KUBELET_SWAP="--fail-swap-on=false"
