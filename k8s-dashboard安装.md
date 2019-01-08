@@ -49,7 +49,7 @@ spec:
           # Uncomment the following line to manually specify Kubernetes API server Host 
           # If not specified, Dashboard will attempt to auto discover the API server and connect 
           # to it. Uncomment only if the default does not work. 
-          - --apiserver-host=http://10.200.3.81:8080 
+          - --apiserver-host=http://192.168.56.100:8080
         livenessProbe: 
           httpGet: 
             path: / 
