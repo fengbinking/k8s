@@ -98,6 +98,14 @@ RunPodSandbox from runtime service failed: rpc error: code = Unknown desc = fail
 [root@localhost k8s]# docker pull googlecontainer/pause-amd64:3.0
 [root@localhost k8s]# docker tag googlecontainer/pause-amd64:3.0 gcr.io/google_containers/pause-amd64:3.0
 
+[root@localhost k8s]# kubectl delete -f kubernetes-dashboard.yaml 
+
+[root@localhost k8s]# kubectl create -f kubernetes-dashboard.yaml 
+
+[root@localhost k8s]# kubectl logs -f kubernetes-dashboard-846c9cc59c-6grt2 -n kube-system
+Error while initializing connection to Kubernetes apiserver. This most likely means that the cluster is misconfigured (e.g., it has invalid apiserver certificates or service accounts configuration) or the --apiserver-host param points to a server that does not exist. Reason: Get http://10.200.3.81:8080/version: dial tcp 10.200.3.81:8080: i/o timeout
+Refer to the troubleshooting guide for more information: https://github.com/kubernetes/dashboard/blob/master/docs/user-guide/troubleshooting.md
+
 [root@localhost ~]# kubectl get pods --all-namespaces  
 NAMESPACE     NAME                                    READY     STATUS    RESTARTS   AGE
 default       my-nginx-379829228-mpm5f                1/1       Running   0          59m
