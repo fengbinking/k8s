@@ -5,8 +5,10 @@
 [root@localhost ~]#docker pull docker.io/siriuszg/kubernetes-dashboard-amd64:v1.5.1
 ```
 
-**kubernetes-dashboard.yaml文件如下：**
-**[root@localhost ~]# cat kubernetes-dashboard.yaml **
+**创建kubernetes-dashboard.yaml，文件如下：**
+```
+[root@localhost ~]# cat kubernetes-dashboard.yaml
+```
 ```
 kind: Deployment 
 apiVersion: extensions/v1beta1 
