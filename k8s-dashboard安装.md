@@ -111,3 +111,21 @@ NAMESPACE     NAME                                    READY     STATUS    RESTAR
 default       my-nginx-379829228-mpm5f                1/1       Running   0          59m
 kube-system   kubernetes-dashboard-3162153223-2s0qb   1/1       Running   0          40m
 ```
+
+
+**查看dashboard访问地址**
+```
+[root@localhost k8s]# kubectl get pods --all-namespaces -o wide
+NAMESPACE     NAME                                   READY     STATUS    RESTARTS   AGE       IP            NODE             NOMINATED NODE
+kube-system   kubernetes-dashboard-8ff88dd47-n644g   1/1       Running   0          5m        172.20.81.2   192.168.56.101   <none>
+# 发现dashboard部署到了192.168.56.101这个节点上。
+# 接着，查看dashboard的集群内部IP及端口
+
+[root@localhost k8s]# kubectl get services --all-namespaces
+NAMESPACE     NAME                   TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)        AGE
+default       kubernetes             ClusterIP   192.168.1.1     <none>        443/TCP        12d
+kube-system   kubernetes-dashboard   NodePort    192.168.1.119   <none>        80:30904/TCP   5m
+```
+```
+  由上面命令可以看出kubernetes-dashboard的访问地址为192.168.56.101:30904
+```
